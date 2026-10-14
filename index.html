@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Lanches - Sabor e Economia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --cor-principal: #ff6b00;
+            --cor-secundaria: #2d2d2d;
+            --cor-fundo: #fff9f2;
+            --cor-destaque: #ffcc00;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-secundaria);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--cor-principal), #e05a00);
+            color: white;
+            padding: 1.5rem 5%;
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .logo p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background-color: var(--cor-secundaria);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cor-destaque);
+        }
+
+        .hero {
+            padding: 3rem 5%;
+            text-align: center;
+            background: url('') center/cover no-repeat, linear-gradient(rgba(255,107,0,0.1), rgba(255,107,0,0.05));
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--cor-principal);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .destaque {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: var(--cor-secundaria);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        section {
+            padding: 3rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--cor-principal);
+        }
+
+        .cardapio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .lanche-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--cor-principal);
+        }
+
+        .lanche-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lanche-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--cor-secundaria);
+        }
+
+        .lanche-card .descricao {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .preco {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--cor-principal);
+        }
+
+        .preco span {
+            font-size: 0.9rem;
+            color: #888;
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        .economia {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .sobre-nos {
+            background-color: white;
+        }
+
+        .sobre-conteudo {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .contato {
+            background-color: var(--cor-secundaria);
+            color: white;
+        }
+
+        .contato .section-title {
+            color: var(--cor-destaque);
+        }
+
+        .contato-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .contato-info p {
+            margin: 1rem 0;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #aaa;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <h1>🍔 Big Lanches</h1>
+            <p>O melhor sabor que cabe no seu bolso!</p>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#cardapio">Cardápio</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção Início -->
+    <section class="hero" id="inicio">
+        <h2>Lanches Saborosos com Preço Justo</h2>
+        <p>Ingredientes frescos, preparo rápido e os melhores preços da região. Qualidade que você pode saborear sem pesar no orçamento!</p>
+        <div class="destaque">✅ Sem taxa de entrega · Pedido mínimo acessível</div>
+        <p>📲 Peça pelo WhatsApp ou venha nos visitar!</p>
+    </section>
+
+    <!-- Seção Cardápio -->
+    <section id="cardapio">
+        <h2 class="section-title">Nosso Cardápio</h2>
+        <div class="cardapio-grid">
+            <!-- Lanche 1 -->
+            <div class="lanche-card">
+                <h3>X-Básico</h3>
+                <p class="descricao">Pão, carne moída, queijo, alface e tomate. Simples e delicioso!</p>
+                <p class="preco">R$ 8,90 <span>R$ 12,00</span></p>
+                <span class="economia">Economize R$ 3,10</span>
+            </div>
+
+            <!-- Lanche 2 -->
+            <div class="lanche-card">
+                <h3>X-Econômico</h3>
+                <p class="descricao">Pão, 2 carnes, queijo, presunto, milho e batata palha.</p>
+                <p class="preco">R$ 12,50 <span>R$ 16,00</span></p>
+                <span class="economia">Economize R$ 3,50</span>
+            </div>
+
+            <!-- Lanche 3 -->
+            <div class="lanche-card">
+                <h3>X-Big</h3>
+                <p class="descricao">3 carnes, queijo cheddar, bacon, ovo, calabresa e molho especial.</p>
+                <p class="preco">R$ 18,90 <span>R$ 25,00</span></p>
+                <span class="economia">Economize R$ 6,10</span>
+            </div>
+
+            <!-- Lanche 4 -->
+            <div class="lanche-card">
+                <h3>X-Familia</h3>
+                <p class="descricao">Pão grande, 4 carnes, queijo, presunto, tomate, cebola e batata frita.</p>
+                <p class="preco">R$ 22,00 <span>R$ 30,00</span></p>
+                <span class="economia">Economize R$ 8,00</span>
+            </div>
+
+            <!-- Lanche 5 -->
+            <div class="lanche-card">
+                <h3>Combo Estudante</h3>
+                <p class="descricao">X-Básico + Batata Frita + Refrigerante Lata.</p>
+                <p class="preco">R$ 14,00 <span>R$ 19,50</span></p>
+                <span class="economia">Economize R$ 5,50</span>
+            </div>
+
+            <!-- Lanche 6 -->
+            <div class="lanche-card">
+                <h3>Vegetariano</h3>
+                <p class="descricao">Hambúrguer de grão-de-bico, queijo, alface, tomate e molho verde.</p>
+                <p class="preco">R$ 11,00 <span>R$ 14,00</span></p>
+                <span class="economia">Economize R$ 3,00</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section class="sobre-nos" id="sobre">
+        <h2 class="section-title">Sobre a Big Lanches</h2>
+        <div class="sobre-conteudo">
+            <p>Somos uma lanchonete local dedicada a oferecer lanches saborosos, preparados com ingredientes selecionados, a preços que cabem no seu bolso.</p>
+            <br>
+            <p>Nossa missão é simples: <strong>comida boa não precisa ser cara!</strong> Trabalhamos todos os dias para garantir que você e sua família possam saborear lanches fresquinhos com o melhor custo-benefício de Curitiba e região.</p>
+            <br>
+            <p>📍 Fundada em 2025 · 🕐 Segunda a Sábado: 18h às 23h</p>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section class="contato" id="contato">
+        <h2 class="section-title">Fale Conosco</h2>
+        <div class="contato-info">
+            <p>📲 WhatsApp: (41) 9XXXX-XXXX</p>
+            <p>📍 Endereço: Rua das Lanches, 123 - Bairro Centro, Curitiba - PR</p>
+            <p>📧 E-mail: contato@biglanches.com.br</p>
+            <p>🕐 Funcionamento: Seg-Sáb: 18h–23h | Domingo: 19h–22h</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2026 Big Lanches - Todos os direitos reservados.</p>
+        <p>O melhor custo-benefício de Curitiba está aqui!</p>
+    </footer>
+</body>
+</html>
+</body>
+</html>

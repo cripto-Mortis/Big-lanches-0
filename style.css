@@ -1,0 +1,255 @@
+/* style.css - Big Lanches */
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Paleta de Cores */
+:root {
+    --cor-principal: #ff6b00;
+    --cor-secundaria: #2d2d2d;
+    --cor-fundo: #fff9f2;
+    --cor-destaque: #ffcc00;
+    --cor-sucesso: #4CAF50;
+    --cor-branca: #ffffff;
+    --cor-texto-claro: #666666;
+    --cor-texto-suave: #888888;
+    --cor-rodape-fundo: #1a1a1a;
+    --cor-rodape-texto: #aaaaaa;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, var(--cor-principal), #e05a00);
+    color: var(--cor-branca);
+    padding: 1.5rem 5%;
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.logo p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* Navegação */
+nav {
+    background-color: var(--cor-secundaria);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Seção Hero / Início */
+.hero {
+    padding: 3rem 5%;
+    text-align: center;
+    background: linear-gradient(rgba(255, 107, 0, 0.1), rgba(255, 107, 0, 0.05));
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--cor-principal);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.destaque {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-secundaria);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Seções Gerais */
+section {
+    padding: 3rem 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: var(--cor-principal);
+}
+
+/* Cardápio */
+.cardapio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.lanche-card {
+    background: var(--cor-branca);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--cor-principal);
+}
+
+.lanche-card:hover {
+    transform: translateY(-5px);
+}
+
+.lanche-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--cor-secundaria);
+}
+
+.lanche-card .descricao {
+    color: var(--cor-texto-claro);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.preco {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+.preco span {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    text-decoration: line-through;
+    margin-left: 0.5rem;
+}
+
+.economia {
+    display: inline-block;
+    background-color: var(--cor-sucesso);
+    color: var(--cor-branca);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+/* Sobre Nós */
+.sobre-nos {
+    background-color: var(--cor-branca);
+}
+
+.sobre-conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.sobre-conteudo p {
+    margin-bottom: 1rem;
+}
+
+/* Contato */
+.contato {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+}
+
+.contato .section-title {
+    color: var(--cor-destaque);
+}
+
+.contato-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.contato-info p {
+    margin: 1rem 0;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-rodape-fundo);
+    color: var(--cor-rodape-texto);
+    text-align: center;
+    padding: 2rem 5%;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .hero h2,
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .hero p,
+    .sobre-conteudo,
+    .contato-info {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardapio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destaque {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+}
